@@ -1,0 +1,26 @@
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-connect {
+  position: absolute;
+  right: 30px;
+}
+
+.nav-connect a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.text-white span {
+    color: red
+}
