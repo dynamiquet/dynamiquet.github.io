@@ -24,3 +24,26 @@
 .text-white span {
     color: red
 }
+
+/* Override primary color
+.background-primary {
+  background-color: #your-hex-color !important;
+} */
+
+/* Create new custom background colors */
+.background-custom-green {
+  background-color: #2e981f;
+}
+
+.background-custom-gray {
+  background-color: #34495e;
+}
+
+.background-custom-accent {
+  background-color: #e74c3c;
+}
+
+/* Custom text colors */
+.text-custom-blue {
+  color: #2c3e50;
+}
