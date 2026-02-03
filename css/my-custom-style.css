@@ -43,8 +43,14 @@
   color: #2c3e50;
 }
 
+.adaptive-flex {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
-  .flex-large-screen {
+  .adaptive-flex {
     display: flex;
     gap: 20px;
     flex-direction: row;
