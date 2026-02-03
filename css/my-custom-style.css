@@ -42,3 +42,12 @@
 .text-custom-blue {
   color: #2c3e50;
 }
+
+@media (min-width: 1024px) {
+  .flex-large-screen {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
