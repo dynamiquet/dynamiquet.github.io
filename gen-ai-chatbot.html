@@ -88,6 +88,10 @@
             <p class="text-white text-size-18 margin-bottom-20">
             The interface is a typical terminal Command Line Interface, so most of the design choices simply consisted of adhering to the standard look. I chose to use "> " at the start of each input line because it is common in <abbr title="Command Line Interface">CLIs</abbr>. If the user is used to that convention, they intuivitely see that they are being invited to type in input and press Return/Enter when done. The chatbot also starts with a "Hey, how can I help you?" greeting, inviting the user to interact with it. 
             </p>
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Design Choices for DAI GenAI Assistant App</h2>
+            <p class="text-white text-size-18 margin-bottom-20">
+              The web-based GenAI assistant was intentionally designed using a server-side architecture with Flask to keep the request–response cycle transparent and easy to reason about. The interface relies on semantic HTML, CSS, and Jinja templating so that structure, styling, and logic remain clearly separated. A key design choice was to maintain conversation state in memory within the GeminiClient object and pass the entire chat history to the template on each request, allowing the conversation to render dynamically while keeping the data model simple and inspectable. I also chose to store messages using Gemini’s structured types.Content objects rather than flattening everything into plain strings, preserving role distinctions and aligning closely with the underlying API. This is what makes it possible to render the output with the same distinction in the final GenAI assistant. I aimed for a balance between simplicity, transparency, and extensibility.
+            </p>
         </div>
       </div>
     </section>
