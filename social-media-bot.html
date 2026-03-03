@@ -51,6 +51,8 @@
             Built a social media (Bluesky) bot which regularly posts two motivational qoutes pulled from an API (in two formats, one in text, and the other in image format) and interacts with Bluesky user's by liking and replying to their posts. 
           </p>
           <a class="button background-primary" href="projects.html">← Back to Projects</a>
+          <a class="button background-primary" href="https://github.com/CS302-EverydayTech-W26/bluesky-bot-dynamiquet" target="_blank"> View on GitHub</a>
+          <a class="button background-primary" href="https://bsky.app/profile/dyque.bsky.social" target="_blank"> Go to Bot's Profile</a>
         </div>          
       </div>
       <div role="img" class="background-parallax" style="background-image:url(my-img/headshot.png)" aria-label="Project hero background"></div>
@@ -59,72 +61,113 @@
     <!-- Overview Section -->
     <section class="section padding" style="background-color: #2E8B57;">
       <div class="line">
-        <div class="s-12 m-12 l-6">
-          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview</h2>
+        <div class="s-12 m-12 l-12">
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview and Design Choices for Text-Only Post</h2>
           <p class="text-white text-size-18 margin-bottom-20">
-            &lt;Detailed description of the project. Explain the problem it solves, the approach taken, and the impact.&gt;
+            The text-only post uses the ZenQuotes API to retrieve a random quote. The bot logs into Bluesky using the atproto client and posts the quote directly as plain text. This demonstrates basic automation without multimedia enhancement.
+
+            I chose to use motivational quotes because they are widely shareable and align with common social media engagement patterns. There are even many legit, human-run social media accounts who have thrived off of posting motivational quotes. Therefore, the simplicity of the format seemed best fit to demonstrate how easily automated accounts can blend into normal user activity.
           </p>
+
+          <div class="adaptive-flex s-12 m-12 l-12 margin-bottom" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="s-12 m-6 l-6">
+              <img src="my-img/bot-text-post.png" alt="Bot Text Post Screenshot" style="width: 100%; border-radius: 8px;">
+              <p class="text-white text-size-16 text-center margin-top-20"><strong>Image 1:</strong> Bot Text-Only Post Screenshot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="line">
+        <div class="s-12 m-12 l-12">
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview and Design Choices for Multimedia Post</h2>
           <p class="text-white text-size-18 margin-bottom-20">
-            &lt;Additional context or methodology if needed.&gt;
+            For the multimedia post, the bot generates a custom image using the <a href="https://pillow.readthedocs.io/en/stable/" target="_blank" style="text-decoration: underline;">Pillow library</a>. The quote text is dynamically centered onto a styled background and uploaded as an embedded image using Bluesky’s image embedding system. The dark teal background and centered white typography create a clean, minimalist aesthetic. The visual formatting increases perceived credibility and engagement compared to text-only posts. It also partially aims to emulate the common pattern on posting quotes on social media platforms against minimalistic backgrounds.
+          </p>
+
+          <div class="adaptive-flex s-12 m-12 l-12 margin-bottom" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="s-12 m-6 l-6">
+              <img src="my-img/bot-multimedia-post.png" alt="Bot Text Post Screenshot" style="width: 100%; border-radius: 8px;">
+              <p class="text-white text-size-16 text-center margin-top-20"><strong>Image 2:</strong> Bot Multimedia Post Screenshot</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="line">
+        <div class="s-12 m-12 l-12">
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview and Design Choices for User Interactions</h2>
+          <p class="text-white text-size-18 margin-bottom-20">
+            The bot searches Bluesky for posts containing "Kendrick Lamar" and replies to one post per execution. It also likes the post and stores replied <abbr title="Uniform Resource Identifiers">URIs</abbr> locally to avoid duplicate responses. The reply message is intentionally ironic, suggesting Kendrick Lamar is "underground," which is far from the truth. This exaggeration also emulates the social-media-typical humor, which is more likely to increase engagement with the post.
+          </p>
+
+          <div class="adaptive-flex s-12 m-12 l-12 margin-bottom" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="s-12 m-6 l-6">
+              <img src="my-img/bot-reply-and-like.png" alt="Bot Text Post Screenshot" style="width: 100%; border-radius: 8px;">
+              <p class="text-white text-size-16 text-center margin-top-20"><strong>Image 3:</strong> Bot CLI Screenshot</p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="line">
+        <div class="s-12 m-12 l-12">
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview and Design Choices for External Library</h2>
+          <p class="text-white text-size-18 margin-bottom-20">
+            I used the Python <a href="https://pillow.readthedocs.io/en/stable/" target="_blank" style="text-decoration: underline;">Pillow library</a> to dynamically generate custom quote images. I created a blank image canvas, calculated text positioning, and rendered wrapped quote text onto the image using a chosen font. The generated image file is then uploaded and embedded directly into a Bluesky post. I chose a dark teal background with centered white typography to create a minimalist, high-contrast aesthetic that feels intentional and shareable. This attention to aesthetic details allows for the demonstration how automation can closely simulate human-designed content, especially today, as Generative AI becomes increasingly prevalent.
+          </p>
+
+          <div class="adaptive-flex s-12 m-12 l-12 margin-bottom" style="display: flex; justify-content: center; gap: 10px;">
+            <div class="s-12 m-6 l-6">
+              <img src="my-img/bot-external-library.png" alt="Bot Text Post Screenshot" style="width: 100%; border-radius: 8px;">
+              <p class="text-white text-size-16 text-center margin-top-20"><strong>Image 4:</strong> Image Constructed with Pillow Library</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="section padding background-custom-accent" style="padding-top: 5%; padding-bottom: 5%;">
+      <div class="line">
+        <div class="s-12 m-12 l-12">
+          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-30">Reflection</h2>
+          <div class="s-12 m-12 l-6">
+            <h2 class="text-white text-s-size-24 text-center text-strong margin-bottom-20">In-class Discussions</h2>
+            <p class="text-white text-s-size-18 margin-right-30">
+              I thoroughly enjoyed our discussions around categorization of bots as either "benign" or "malicious". There seemed to be a clear agreement that there, indeed, are benign bots, which are not only harmful but also useful to most. I believe that if I had presented my bot in the discussion so that it can be classified, most would have agreed that it fell into the category of "benign" bots. On the other hand, there didn't seem to be as natural of an agreement when it came to the discussion of <i>what</i> counts as malicious bots. Although I had a pretty well set idea of what I believed to be "malicious" bots, when Yahvi asked us to consider what it means for people who run bots for business, I had to reconsider some of my convictions regarding the topic. Jean's mention of what the combination of bots and generative AI could look like (since it seems to be the era we're inevitably headed in, if not already there) was some food for thought.
+            </p>
+          </div>
+          <div class="s-12 m-12 l-6">
+            <h2 class="text-white text-center text-s-size-24 text-strong margin-bottom-20">Pre-class Readings</h2>
+          <p class="text-white text-s-size-18 margin-bottom-20 margin-right-30">
+            One of the pre-class readings introduced two common distinctions used in the literature to categorize social media bots. The first separates bots into <i>benign</i> and <i>malicious</i> (Ferrara et al., 2016). While this distinction initially felt intuitive, I began to question how stable it actually is. My own bot posts quotes and interacts with users in a mostly playful way, which would likely classify it as benign. However, the reading made me realize that intention alone may not be enough to determine moral status. A bot designed without harmful intent could still mislead, amplify content irresponsibly, or manipulate engagement dynamics. The simplicity of the benign/malicious divide may obscure more complicated ethical realities.
+          </p>
+
+          <p class="text-white text-s-size-18 margin-right-30">
+            The second distinction, drawn from Boshmaf et al. (2013), focuses not on harm but on imitation. Social bots are defined as systems designed to pass as human by mimicking or simulating user behavior. This distinction felt more conceptually significant to me because it shifts the moral concern from what a bot does to how it presents itself. Even if my bot is not malicious, it is designed to resemble ordinary user activity in a social feed. That resemblance raises deeper questions about transparency and authenticity. The reading pushed me to consider whether the ethical tension surrounding social bots lies less in malicious intent and more in the blurring of boundaries between human and machine in public digital spaces.
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- APA Citations -->
+    <section class="section padding">
+      <div class="line">
+        <div class="s-12">
+          <h2 class="text-white text-strong text-center">Works Cited</h2>
+        </div>
+        <div class="s-12 m-12">
+          <p class="text-white text-size-18 margin-right-30">
+            1. Boshmaf, Y., Muslukhov, I., Beznosov, K., & Ripeanu, M. (2013). The socialbot network: When bots socialize for fame and money. In <i>Proceedings of the 27th Annual Computer Security Applications Conference</i> (pp. 93–102). https://doi.org/10.1145/2076732.2076746
+          </p>
+          
+          <p class="text-white text-size-18 margin-right-30">
+            2. Ferrara, E., Varol, O., Davis, C., Menczer, F., & Flammini, A. (2016). The rise of social bots. <i>Communications of the ACM, 59</i>(7), 96–104. https://doi.org/10.1145/2818717
           </p>
         </div>
-        <div class="s-12 m-12 l-5 l-offset-1 hide-s hide-m">
-          <h3 class="text-white text-s-size-26 text-extra-strong margin-bottom-20">Key Details</h3>
-          <ul class="text-white text-size-16 margin-bottom-20">
-            <li><strong>Technologies:</strong> &lt;Python, React, etc.&gt;</li>
-            <li><strong>Duration:</strong> &lt;Timeline&gt;</li>
-            <li><strong>Role:</strong> &lt;Your role in the project&gt;</li>
-            <li><strong>Status:</strong> &lt;Complete / In Progress&gt;</li>
-          </ul>
-        </div>
       </div>
     </section>
 
-    <!-- Outcomes Section -->
-    <section class="section background-custom-accent" style="padding-top: 5%; padding-bottom: 5%;">
-      <div class="line">
-        <div class="s-12 m-12 l-8">
-          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-30">Outcomes & Impact</h2>
-          <ul class="text-white text-size-18 margin-bottom-20">
-            <li>&lt;Key achievement or metric&gt;</li>
-            <li>&lt;Key achievement or metric&gt;</li>
-            <li>&lt;Key achievement or metric&gt;</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section padding background-dark">
-      <div class="line">
-        <div class="s-12 text-center margin-bottom-40">
-          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-30">Project Highlights</h2>
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section text-center padding-2x background-custom-accent">
-      <div class="line">
-        <div class="s-12 m-12 l-8 l-offset-2">
-          <h2 class="text-white text-s-size-30 text-m-size-40 text-size-50 text-extra-strong margin-bottom-30">
-            Interested in learning more?
-          </h2>
-          <a class="button background-white text-dark" href="https://github.com/dynamiquet" target="_blank" rel="noopener">View Code on GitHub</a>
-          <span class="text-white margin-horizontal-20">·</span>
-          <a class="button background-white text-dark" href="projects.html">See Other Projects</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
