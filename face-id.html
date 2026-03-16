@@ -51,6 +51,7 @@
             With my partner Nathan, we built a live webcame face detection using a Python module wrapper for C++'s <a href="https://opencv.org/" target="_blank" style="text-decoration: underline;">OpenCV</a> library.
           </p>
           <a class="button background-primary" href="projects.html">← Back to Projects</a>
+          <a class="button background-primary" href="https://github.com/dynamiquet/face_recognition_proto" target="_blank">View on GitHub →</a>
         </div>          
       </div>
       <div role="img" class="background-parallax" style="background-image:url(my-img/headshot.png)" aria-label="Project hero background"></div>
@@ -59,72 +60,76 @@
     <!-- Overview Section -->
     <section class="section padding" style="background-color: #2E8B57;">
       <div class="line">
-        <div class="s-12 m-12 l-6">
+        <div class="s-12 m-12 l-12">
           <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Overview</h2>
           <p class="text-white text-size-18 margin-bottom-20">
-            &lt;Detailed description of the project. Explain the problem it solves, the approach taken, and the impact.&gt;
-          </p>
+            Face ID is a biometric authentication technology that uses facial recognition to verify a user’s identity. In our case, we created a prototype that refers to pre-saved reference image to identify people in a live webcam feed and add their name next to their face. It also faces with no reference images and labels them as "unknown".
           <p class="text-white text-size-18 margin-bottom-20">
-            &lt;Additional context or methodology if needed.&gt;
+            To start, add reference pictures of faces that you would like the program to be able to recognize. Only one picture is needed per face. The program also needs the name of each person, which it later uses in labeling after identifying the person in a webcam feed. The program uses a pre-built, <abbr title="Convolutional Neural Network">CNN</abbr>-based model to convert the reference images into a 128-dimensional encoding. Later, after faces are recognized from the webcam feed, it uses the same model to encode the faces too. It then compares the encoding of each detected face to those of the reference images. For each image, it returns the closest (i.e. with smallest Euclidean distance) match, as long as it matches the similarity threshold, which is 0.6 for our case.
+          </p>
           </p>
         </div>
-        <div class="s-12 m-12 l-5 l-offset-1 hide-s hide-m">
-          <h3 class="text-white text-s-size-26 text-extra-strong margin-bottom-20">Key Details</h3>
-          <ul class="text-white text-size-16 margin-bottom-20">
-            <li><strong>Technologies:</strong> &lt;Python, React, etc.&gt;</li>
-            <li><strong>Duration:</strong> &lt;Timeline&gt;</li>
-            <li><strong>Role:</strong> &lt;Your role in the project&gt;</li>
-            <li><strong>Status:</strong> &lt;Complete / In Progress&gt;</li>
-          </ul>
+      <div>
+        <div class="adaptive-flex s-12 m-12 l-12 margin-bottom" style="display: flex; justify-content:center; gap: 10px;">
+          <div class="s-12 m-6 l-4">
+            <img src="my-img/hog.png" alt="HOG: History of Oriented Gradients" style="width: 100%; border-radius: 8px;">
+            <p class="text-white text-size-16 text-center margin-top-20">Fig 1.1 HOG: History of Oriented Gradents; A technology used in detecting faces in a webcam feed</p>
+          </div>
+          <div class="s-12 m-6 l-5">
+            <img src="my-img/cnn.webp" alt="CNN: Convolutional Neural Networks" style="width: 100%; border-radius: 8px;">
+            <p class="text-white text-size-16 text-center margin-top-20">Fig 1.2 CNN: Convolutional Neural Network; A technology used in learning similarities between faces during image identification</p>
+          </div>
+        </div>
+        <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-20">Screeshot Video</h2>
+          <p class="text-white text-size-18 margin-bottom-20">
+            Here will be a screenshot video of the too.
+          </p>
+      </div>
+    </section>
+
+    <!-- Reflection -->
+    <section class="section padding background-custom-accent" style="padding-top: 5%; padding-bottom: 5%;">
+      <div class="line">
+        <div class="s-12 m-12 l-6">
+          <h2 class="text-white text-center text-s-size-24 text-strong margin-bottom-20">Reflection on Class Discussion</h2>
+          <p class="text-white text-s-size-18 margin-bottom-20 margin-right-30">
+            When preparing the discussion that Nathan and I led, we focused on the epistemological questions raised by face recognition technologies like Face ID. One of the central questions we posed was whether a face recognition model that performs better than a human at identifying faces could be considered <i>more knowledgeable</i> than a human. At first, I tended to separate human knowledge and machine outputs fairly clearly. However, our discussion made that distinction feel less obvious. Since both humans and machine learning models rely on pattern recognition, the difference between the two may not lie purely in the mechanism of recognition itself.
+          </p>
+
+          <p class="text-white text-s-size-18 margin-right-30">
+            Another question we raised asked what should happen when a conflict arises between human recognition and a facial recognition system—for example, when CCTV software identifies a suspect but an eyewitness disagrees. This question sparked interesting discussion about trust and authority in technological systems. Some classmates suggested that high-performing models might deserve greater trust because they are statistically reliable, while others argued that human perception carries contextual understanding that a model might lack. These discussions made me appreciate more the fact that the philosophical problem is not simply whether machines can recognize faces accurately, but how societies decide whose knowledge counts when humans and machines disagree.
+          </p>
+          
+          <p class="text-white text-s-size-18 margin-right-30">
+            Watching other groups present their everyday technologies also shaped how I thought about the philosophical implications of digital systems. In particular, the presentation on NFTs by Adit and Hudson made me think about questions of <a href="https://www.eurojust.europa.eu/sites/default/files/assets/eurojust-nfts-intellectual-property-rights-flyer.pdf" target="_blank" style="text-decoration: underline;">ownership in digital environments</a>. While I was not previously very familiar with NFTs, the project highlighted how technologies can attempt to establish ownership and authenticity in spaces where copying and replication are extremely easy. This idea of proving authenticity in digital contexts parallels some of the concerns around Face ID.
+          </p>
+        </div>
+
+        <div class="s-12 m-12 l-6">
+          <h2 class="text-white text-center text-s-size-24 text-strong margin-bottom-20">Reflection on Philosophical Approaches</h2>
+          <p class="text-white text-s-size-18 margin-bottom-20 margin-right-30">
+            The epistemological frameworks we explored in class strongly influenced how I think about technologies like Face ID. Epistemology asks what it means to <i>know</i> something and how knowledge can be justified. A face recognition model does not “know” someone in the same way a human does—it does not have experiences, memories, or a personal relationship with the person it identifies. Instead, it produces probabilistic outputs based on patterns in data. Yet if a system consistently produces accurate identifications, it begins to resemble something that functions like knowledge in practice. This raises an interesting question: if knowledge is tied to reliable recognition of truth, then systems like Face ID challenge our assumptions about knowledge being uniquely human.
+          </p>
+
+          <p class="text-white text-s-size-18 margin-right-30">
+            One idea that helped me reflect on this problem more deeply came from <i>reliabilism</i>, a theory of knowledge that was not directly covered in class. Reliabilism suggests that a belief counts as knowledge if it is produced by a reliable process. When applied to face recognition systems, this framework creates an interesting tension. If a machine learning model identifies faces with extremely high accuracy, reliabilism might suggest that its outputs have epistemic legitimacy. At the same time, human recognition involves perception, experience, and contextual reasoning that cannot easily be reduced to statistical reliability. 
+          </p>
+        </div>
+    </section>
+<!-- APA Citations -->
+    <section class="section padding">
+      <div class="line">
+        <div class="s-12">
+          <h2 class="text-white text-strong text-center">Works Cited</h2>
+        </div>
+        <div class="s-12 m-12">
+          <p class="text-white text-size-18 margin-right-30">
+            1. Non-Fungible Tokens and Intellectual Property Rights. (n.d.). Eurojust.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Outcomes Section -->
-    <section class="section background-custom-accent" style="padding-top: 5%; padding-bottom: 5%;">
-      <div class="line">
-        <div class="s-12 m-12 l-8">
-          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-30">Outcomes & Impact</h2>
-          <ul class="text-white text-size-18 margin-bottom-20">
-            <li>&lt;Key achievement or metric&gt;</li>
-            <li>&lt;Key achievement or metric&gt;</li>
-            <li>&lt;Key achievement or metric&gt;</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="section padding background-dark">
-      <div class="line">
-        <div class="s-12 text-center margin-bottom-40">
-          <h2 class="text-white text-s-size-32 text-extra-strong margin-bottom-30">Project Highlights</h2>
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-        <div class="s-12 m-6 l-4 margin-bottom">
-          <img src="my-img/headshot.png" alt="Project screenshot" style="border-radius: 8px; width: 100%;">
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section text-center padding-2x background-custom-accent">
-      <div class="line">
-        <div class="s-12 m-12 l-8 l-offset-2">
-          <h2 class="text-white text-s-size-30 text-m-size-40 text-size-50 text-extra-strong margin-bottom-30">
-            Interested in learning more?
-          </h2>
-          <a class="button background-white text-dark" href="https://github.com/dynamiquet" target="_blank" rel="noopener">View Code on GitHub</a>
-          <span class="text-white margin-horizontal-20">·</span>
-          <a class="button background-white text-dark" href="projects.html">See Other Projects</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
